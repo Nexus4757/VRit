@@ -1,0 +1,35 @@
+/* src/components/Module.css */
+
+.module {
+    background-color: #ffffff; /* White background for each module */
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    text-align: center; /* Center text */
+    margin: 15px; /* Margin between modules */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.module:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.module-icon {
+    width: 80px; /* Set a fixed width for the icon */
+    height: 80px; /* Set a fixed height for the icon */
+    margin-bottom: 10px; /* Space between icon and title */
+}
+
+h3 {
+    font-size: 20px; /* Title font size */
+    margin: 10px 0; /* Margin above and below title */
+    color: #333; /* Dark gray for the title */
+}
+
+p {
+    font-size: 14px; /* Description font size */
+    color: #666; /* Light gray for the description */
+}

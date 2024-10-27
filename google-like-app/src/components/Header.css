@@ -1,37 +1,75 @@
+/* src/components/Header.css */
 .header {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* Full height of the viewport */
-    background-color: #f5f5f5; /* Light grey background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 5px; /* Rounded corners */
-    padding: 20px; /* Padding around the header */
-  }
-  
-  .box-container {
-    display: flex;
-    justify-content: center; /* Center boxes horizontally */
-    margin-top: 20px; /* Space between the search bar and boxes */
-  }
-  
-  .box {
-    width: 150px;
-    height: 150px;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    margin: 10px; /* Margin between boxes */
-    text-decoration: none; /* Remove underline from links */
-    color: black; /* Text color */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth hover effect */
-  }
-  
-  .box:hover {
-    background-color: #ccc; /* Darken box on hover */
-  }
-  
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background-color: #f5f5f5; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px; 
+  padding: 20px; 
+  text-align: center;
+  margin-top: 20px;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-around; 
+  margin-top: 20px; 
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin: 10px; 
+  cursor: pointer; /* Add cursor pointer for better UX */
+  text-decoration: none; 
+  color: black; 
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+.box:hover {
+  background-color: #ccc; 
+}
+
+/* Add styles for the module when rendered */
+.module {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 80%; /* Make it take up a reasonable width */
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+}
+
+.navigation-buttons button {
+  background-color: #4285F4; /* Google blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.navigation-buttons button:hover {
+  background-color: #357AE8; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+.navigation-buttons button:focus {
+  outline: none; /* Remove focus outline */
+}
