@@ -1,12 +1,13 @@
 // src/components/Header.js
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const placeholderTexts = ["astrophysics", "disease prevention", "phytoplankton"];
 
 function Header() {
   const [displayText, setDisplayText] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const typingSpeed = 150;
@@ -16,35 +17,37 @@ function Header() {
 
   useEffect(() => {
     const currentText = placeholderTexts[index];
-
+    
     const timer = setTimeout(() => {
       if (isDeleting) {
-        // Remove character
         setDisplayText((prev) => prev.slice(0, -1));
-
-        // When done deleting, move to the next word
+        
         if (displayText.length === 0) {
           setIsDeleting(false);
           setIndex((prevIndex) => (prevIndex + 1) % placeholderTexts.length);
         }
       } else {
-        // Add character
         if (displayText.length < currentText.length) {
           setDisplayText(currentText.slice(0, displayText.length + 1));
         } else {
-          // Word is complete, pause then start deleting
           setTimeout(() => {
             setIsDeleting(true);
           }, pauseDuration);
         }
       }
     }, isDeleting ? deletingSpeed : typingSpeed);
-
+    
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, index]);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchInput.trim()) {
+      navigate(`/search/${encodeURIComponent(searchInput.trim())}`);
+    }
+  };
+
   const handleNavigation = (modelName) => {
-    // Navigate to the corresponding empty page
     navigate(`/empty-page/${modelName}`);
   };
 
@@ -57,10 +60,12 @@ function Header() {
         <span style={{ color: '#FBBC04' }}>R</span>
         <span style={{ color: '#EA4335' }}>i</span>t
       </h1>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <form onSubmit={handleSearch} style={{ display: 'flex', alignItems: 'center' }}>
         <input
           type="text"
           placeholder={displayText}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           style={{
             padding: '15px',
             width: '500px',
@@ -71,26 +76,24 @@ function Header() {
             borderRightWidth: '0px',
           }}
         />
-        <Link to="/page">
-          <button
-            style={{
-              padding: '15px',
-              fontSize: '18px',
-              backgroundColor: '#4285F4',
-              color: 'white',
-              border: '2px black solid',
-              borderRadius: '0px 50px 50px 0px',
-              borderLeftWidth: '0px',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s',
-            }}
-          >
-            Go
-          </button>
-        </Link>
-      </div>
+        <button
+          type="submit"
+          style={{
+            padding: '15px',
+            fontSize: '18px',
+            backgroundColor: '#4285F4',
+            color: 'white',
+            border: '2px black solid',
+            borderRadius: '0px 50px 50px 0px',
+            borderLeftWidth: '0px',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s',
+          }}
+        >
+          Go
+        </button>
+      </form>
 
-      {/* Navigation Buttons */}
       <div className="navigation-buttons">
         <button onClick={() => handleNavigation("covid")}>
           COVID-19 Structure
