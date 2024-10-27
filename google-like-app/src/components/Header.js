@@ -102,7 +102,7 @@ function Header() {
           ISS Space Station Experience
         </button>
         <button onClick={() => handleNavigation("plankton")}>
-          Phytoplankton
+          3D Coordinate Systems
         </button>
       </div>
     </div>
