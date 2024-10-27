@@ -92,5 +92,4 @@ Hard Study Questions:
         </div>
     );
 };
-
 export default CoordinateSystemPage;
