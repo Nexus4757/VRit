@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import EmptyPage from './pages/EmptyPage';
 import './App.css'; // Add this import for additional styles
+import CovidPage from './pages/CovidPage'; // New page for COVID content
+import PlanktonPage from './pages/PlanktonPage'; // New page for Plankton content
+import IssPage from './pages/IssPage'; // New page for ISS content
 
 function App() {
   const location = useLocation();
@@ -16,7 +19,10 @@ function App() {
       {/* Routes */}
       <Routes>
         <Route path="/" element={<div />} /> {/* Home route */}
-        <Route path="/page" element={<EmptyPage />} />
+        <Route path="/empty-page" element={<EmptyPage />} />
+        <Route path="/empty-page/covid" element={<CovidPage />} />
+        <Route path="/empty-page/plankton" element={<PlanktonPage />} />
+        <Route path="/empty-page/iss" element={<IssPage />} />
       </Routes>
     </div>
   );
