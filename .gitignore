@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+google-like-app/node_modules
+google-like-app/.pnp
+google-like-app/.pnp.js
+
+# testing
+google-like-app/coverage
+
+# production
+google-like-app/build
+
+# models
+google-like-app/public/models
+
+# misc
+google-like-app/.DS_Store
+google-like-app/.env.local
+google-like-app/.env.development.local
+google-like-app/.env.test.local
+google-like-app/.env.production.local
+
+google-like-app/npm-debug.log*
+google-like-app/yarn-debug.log*
+google-like-app/yarn-error.log*
+
+google-like-app/.env

@@ -4,7 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useFBX, Html, useProgress } from '@react-three/drei';
 
 const CovidModel = React.memo(() => {
-    const fbx = useFBX('/models/sars_cov2_spike_protein.fbx'); // Load the FBX model
+    const fbx = useFBX('/models/covid19.fbx'); // Load the FBX model
     const [rotationSpeed] = useState(0.01); // Idle rotation speed
 
     // Animate model rotation on idle
@@ -41,9 +41,9 @@ const CovidPage = () => {
 
     return (
         <div style={{ padding: '20px' }}>
-            {/* Centered Heading and Description */}
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <h1 style={{ fontSize: '1.5em', color: '#333' }}>COVID-19 Virus Structure</h1>
+            <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto'}}>
+                <h1 style={{ color: '#4285F4' }} >COVID-19 Virus Structure</h1>
+                <p>Coronaviruses are a group of related RNA viruses that cause diseases in mammals and birds. In humans and birds, they cause respiratory tract infections that can range from mild to lethal. Mild illnesses in humans include some cases of the common cold (which is also caused by other viruses, predominantly rhinoviruses), while more lethal varieties can cause SARS, MERS and COVID-19. In cows and pigs they cause diarrhea, while in mice they cause hepatitis and encephalomyelitis. Coronaviruses constitute the subfamily Orthocoronavirinae, in the family Coronaviridae, order Nidovirales and realm Riboviria.</p>
                 <p style={{ color: '#555' }}>Explore the 3D structure of the COVID-19 virus spike protein.</p>
             </div>
 
@@ -78,6 +78,26 @@ const CovidPage = () => {
                         />
                     </Canvas>
                 </div>
+            </div>
+            <div>
+                    <h1>Study Materials</h1>
+                    <div>
+                    Key Point 1: Coronaviruses are RNA viruses causing various diseases in mammals and birds, with severity ranging from mild to lethal. In humans, they can result in conditions including the common cold, SARS, MERS, and COVID-19.
+                    <br></br><br></br>
+                    Key Point 2: Taxonomically, coronaviruses belong to the subfamily Orthocoronavirinae, within the family Coronaviridae, order Nidovirales, and realm Riboviria.
+                    <br></br><br></br>
+                    Easy Questions:
+                    <br></br>
+                    1. What kind of virus is a coronavirus?
+                    <br></br>
+                    2. What are some of the diseases that coronaviruses can cause in humans?
+                    <br></br><br></br>
+                    Hard Questions:
+                    <br></br>
+                    1. How does the severity of diseases caused by coronaviruses vary in different species (birds, cows, humans)?
+                    <br></br>
+                    2. Explain the taxonomic classification of coronaviruses.
+                    </div>
             </div>
         </div>
     );

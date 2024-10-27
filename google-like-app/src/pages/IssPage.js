@@ -28,8 +28,9 @@ const IssPage = () => {
 
     return (
         <div style={{ padding: '20px' }}>
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <h1 style={{ fontSize: '1.5em', color: '#333' }}>International Space Station</h1>
+            <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto'}}>
+                <h1 style={{ color: '#4285F4' }}>International Space Station</h1>
+                <p>The International Space Station (ISS) is a large space station that was assembled and is maintained in low Earth orbit by a collaboration of five space agencies and their contractors: NASA (United States), Roscosmos (Russia), ESA (Europe), JAXA (Japan), and CSA (Canada). The ISS is the largest space station ever built. Its primary purpose is to perform microgravity and space environment experiments. Operationally, the station is divided into two sections: the Russian Orbital Segment (ROS) assembled by Roscosmos, and the US Orbital Segment (USOS), assembled by NASA, JAXA, ESA and CSA. A striking feature of the ISS is the Integrated Truss Structure, which connects the large solar panels and radiators to the pressurized modules.</p>
                 <p style={{ color: '#555' }}>Explore the 3D model of the International Space Station.</p>
             </div>
 
@@ -57,6 +58,26 @@ const IssPage = () => {
                         />
                     </Canvas>
                 </div>
+            </div>
+            <div>
+            <h1>Study Materials</h1>
+            <div>
+Key Point 1: The ISS is the largest space station ever built, constructed and maintained by a collaboration of five international space agencies: NASA, Roscosmos, ESA, JAXA, and CSA. Its main purpose is to conduct experiments in microgravity and the space environment.
+<br></br><br></br>
+Key Point 2: The space station is divided operationally into two segments: the Russian Orbital Segment (ROS), assembled by Roscosmos, and the US Orbital Segment (USOS), assembled by NASA, JAXA, ESA, and CSA. The Integrated Truss Structure on the ISS connects solar panels and radiators to the pressurized modules.
+<br></br><br></br>
+Easy Study Questions:
+<br></br>
+1. What is the primary purpose of the International Space Station (ISS)?
+<br></br>
+2. Name three of the five international space agencies involved in the assembly and maintenance of the ISS.
+<br></br><br></br>
+Hard Study Questions:
+<br></br>
+1. What are the two operational segments of the International Space Station (ISS) and which agencies assembled each?
+<br></br>
+2. Explain the role of the Integrated Truss Structure on the International Space Station.
+</div>
             </div>
         </div>
     );
